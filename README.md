@@ -6,5 +6,6 @@ Make the user interface responsive and add more components to the website.
 
 Add filtering options to the search bar so users can narrow their searches and find the desired outcomes.
 
+Enhancing the search algorithm.
 
 
