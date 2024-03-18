@@ -25,7 +25,7 @@ const Navbar = () => {
               Explore
             </a>
             <a
-              href="/explore"
+              href="/about"
               className="text-gray-300 hover:text-white px-4 py-3 rounded-md text-lg font-semibold"
             >
               About us

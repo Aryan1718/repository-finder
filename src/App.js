@@ -7,15 +7,19 @@ import { Analytics } from "@vercel/analytics/react"
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [dataCard, setDataCard] = useState([]);
+  const [loading, setLoading] = useState(false); // State to track loading status
   const [searched, setSearched] = useState(false); // State to track if search has been performed
 
   const fetchData = async () => {
+    setLoading(true); // Set loading to true when fetching data
     try {
       const newDataCard = await handleSearch(searchQuery);
       setDataCard(newDataCard);
       setSearched(true); // Set searched to true after fetching data
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false); // Set loading to false after fetching data (success or failure)
     }
   };
 
@@ -42,7 +46,8 @@ function App() {
         </div>
 
         <div className="content">
-          {searched && dataCard.length === 0 && (
+          {loading && <div className="loader"></div>} {/* Show loader when loading is true */}
+          {!loading && searched && dataCard.length === 0 && (
             <p className="no-data-message">No repositories found.</p>
           )}
           <div className="card-container">
