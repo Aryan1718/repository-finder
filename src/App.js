@@ -7,11 +7,13 @@ import { Analytics } from "@vercel/analytics/react"
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [dataCard, setDataCard] = useState([]);
+  const [searched, setSearched] = useState(false); // State to track if search has been performed
 
   const fetchData = async () => {
     try {
       const newDataCard = await handleSearch(searchQuery);
       setDataCard(newDataCard);
+      setSearched(true); // Set searched to true after fetching data
     } catch (error) {
       console.log(error);
     }
@@ -40,6 +42,9 @@ function App() {
         </div>
 
         <div className="content">
+          {searched && dataCard.length === 0 && (
+            <p className="no-data-message">No repositories found.</p>
+          )}
           <div className="card-container">
             {dataCard.map((item, index) => (
               <div key={index} className="card">
