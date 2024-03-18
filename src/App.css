@@ -186,3 +186,17 @@ body {
     max-width: 100%;
   }
 }
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 320px) {
+  .card {
+    width: calc(100% - 10px);
+    max-width: calc(100% - 10px);
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .card {
+    padding: 10px;
+  }
+}
