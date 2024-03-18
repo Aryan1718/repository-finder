@@ -145,41 +145,44 @@ body {
 }
 
 /* Media queries for responsive design */
+/* Add your existing CSS styles here */
+
+/* Media queries for responsive design */
 @media screen and (max-width: 768px) {
-    .container {
-      padding: 10px;
+  .container {
+    padding: 10px;
   }
 
   .search-box {
-      padding-top: 100px;
+    padding-top: 100px;
   }
 
   .card {
-      width: calc(50% - 20px);
-      max-width: calc(50% - 20px);
+    width: calc(50% - 20px);
+    max-width: calc(50% - 20px);
   }
 
   .card:nth-child(odd) {
-      margin-right: 20px;
+    margin-right: 20px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .search-box {
-      padding-top: 50px;
+    padding-top: 50px;
   }
 
   .card {
-      width: calc(100% - 20px); /* Full width cards for very small screens */
-      margin: 10px 0; /* Adjust margin for vertical stacking */
+    width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+    margin: 10px 0;
   }
 
   .card:nth-child(odd) {
-      margin-right: 0; /* Remove the right margin for odd cards */
+    margin-right: 0;
   }
 
   .search-button {
-      max-width: 100%; /* Full width button for small screens */
+    max-width: 100%;
   }
-
 }
