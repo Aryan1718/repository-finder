@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Navbar from './components/nav-bar/nav-bar'
 import { handleSearch } from './components/handler/searchHandler'; // Importing handleSearch from searchHandler.js
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -17,6 +18,7 @@ function App() {
   };
 
   return (
+    <>
     <div className="App">
       <Navbar />
       <div className='container'>
@@ -53,6 +55,8 @@ function App() {
         </div>
       </div>
     </div>
+    <Analytics />
+    </>
   );
 }
 
