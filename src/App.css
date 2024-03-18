@@ -2,16 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -35,4 +25,161 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f8fa;
+}
+
+/* Container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* Search box styles */
+.search-box {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  padding-top: 150px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.search-button {
+  width: 100%;
+  max-width: 200px;
+  background-color: #0366d6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #005cc5;
+}
+
+/* Card container styles */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Card styles */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  max-width: calc(100% - 20px);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 10px;
+  color: #555;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.card a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* Scrollbar styles */
+.card-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.card-container::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+    .container {
+      padding: 10px;
+  }
+
+  .search-box {
+      padding-top: 100px;
+  }
+
+  .card {
+      width: calc(50% - 20px);
+      max-width: calc(50% - 20px);
+  }
+
+  .card:nth-child(odd) {
+      margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-box {
+      padding-top: 50px;
+  }
+
+  .card {
+      width: calc(100% - 20px); /* Full width cards for very small screens */
+      margin: 10px 0; /* Adjust margin for vertical stacking */
+  }
+
+  .card:nth-child(odd) {
+      margin-right: 0; /* Remove the right margin for odd cards */
+  }
+
+  .search-button {
+      max-width: 100%; /* Full width button for small screens */
+  }
+
 }
